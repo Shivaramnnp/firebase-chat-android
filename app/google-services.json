@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "276194514779",
+    "project_id": "onlyss-fcc8a",
+    "storage_bucket": "onlyss-fcc8a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:276194514779:android:ad9c8c2fc202f486ad6c7e",
+        "android_client_info": {
+          "package_name": "com.shivasruthi.onlyss"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9Fw3mWUCR9hILPTaYm6I4BYDsgdvyTrM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,71 @@
+
+[versions]
+# Android & Kotlin
+androidGradlePlugin = "8.2.2"  # <<< CORRECT THIS LINE to a valid AGP version like "8.2.2", "8.3.1", etc.
+# Check your project's setup or a recent Android Studio version.
+androidMaterial = "1.11.0"
+kotlin = "1.9.22"              # This Kotlin version is compatible with Compose Compiler 1.5.8
+coreKtx = "1.12.0"
+lifecycleRuntimeKtx = "2.7.0"
+activityCompose = "1.8.2"
+lifecycleViewmodelKtx = "2.7.0"
+lifecycleViewmodelCompose = "2.7.0"
+media3 = "1.3.0"
+
+# Jetpack Compose
+composeBom = "2024.02.01"
+composeCompiler = "1.5.8"      # Compatible with Kotlin 1.9.22
+
+# Firebase
+firebaseBom = "32.7.4"
+googleServicesPlugin = "4.4.1" # Version for the google-services Gradle plugin
+
+# Testing
+junit = "4.13.2"
+androidxTestExtJunit = "1.1.5"
+espressoCore = "3.5.1"
+
+[libraries]
+# Android & Kotlin
+kotlin-gradle-plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+# This 'android-gradle-plugin' is for accessing AGP classes if needed, its version is tied to 'androidGradlePlugin'
+android-gradle-plugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
+androidx-lifecycle-viewmodel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycleViewmodelCompose" }
+
+# Jetpack Compose (using Bill of Materials - BOM)
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-compose-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" } # For preview
+androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
+androidx-compose-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+android-material = { group = "com.google.android.material", name = "material", version.ref = "androidMaterial" }
+
+# Firebase (using Bill of Materials - BOM)
+firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
+firebase-analytics-ktx = { group = "com.google.firebase", name = "firebase-analytics-ktx" }
+firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx" }
+firebase-database-ktx = { group = "com.google.firebase", name = "firebase-database-ktx" }
+firebase-storage-ktx = { group = "com.google.firebase", name = "firebase-storage-ktx" }
+firebase-messaging-ktx = { group = "com.google.firebase", name = "firebase-messaging-ktx" }
+
+# This 'google-services-plugin' is the Gradle plugin library itself, referenced by its id in the [plugins] section
+google-services-plugin-lib = { group = "com.google.gms", name = "google-services", version.ref = "googleServicesPlugin" } # Renamed for clarity
+
+# Testing
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidxTestExtJunit" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+
+
+[plugins]
+# These define the plugin IDs and their versions, which are then applied in build.gradle.kts files
+androidApplication = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+googleServices = { id = "com.google.gms.google-services", version.ref = "googleServicesPlugin" }
